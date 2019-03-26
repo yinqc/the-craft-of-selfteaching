@@ -84,10 +84,10 @@ Complex is better than complicated.
 # '\nSimple is better than complex.\nComplex is better than complicated.\n'
 # 其中的 \n 被打印出来的时候显示成换行
 ```
-    
+
     Simple is better than complex.
     Complex is better than complicated.
-    
+
 
 
 ## 字符串与数值之间的转换
@@ -133,9 +133,9 @@ else:
           5     print('Have a nice drink!')
     TypeError: '<' not supported between instances of 'str' and 'int'
 
-
 要改成这样才可能行：
-为什么是可能行而不是一定行？如果用户 `input` 键盘输入的是`eighteen`或者`十八`等，依然会导致 `int()`失败并得到 `ValueError` 的报错。用户输入的不可控，可能会导致千奇百怪的报错。但在这里，我们先简化处理，在引导语中加入一个正确的示例并默认用户会按引导语正确输入。
+为什么是可能行而不是一定行？如果用户 `input` 键盘输入的是 `eighteen` 或者 ` 十八 ` 等，依然会导致 `int()` 失败并得到 `ValueError` 的报错。用户输入的不可控，可能会导致千奇百怪的报错。但在这里，我们先简化处理，在引导语中加入一个正确的示例并默认用户会按引导语正确输入。
+
 ```python
 age = int(input('Please tell me your age: 
  an int number , e.g: 22
@@ -170,7 +170,7 @@ else:
 
 
 
-上面这一行报错信息是 `SyntaxError: EOL while scanning string literal`。这是因为 `\'` 表示的是单引号字符 `'`（Literal） —— 是可被输出到屏幕的 `'`，而不是用来标示字符串的那个 `'` —— 别急，无论哪个初学者第一次读到前面的句子都觉得有点莫名其妙…… —— 于是，Python 编译器扫描这个 “字符串” 的时候，还没找到标示字符串末尾的另外一个`'`的时候就读到了 `EOL`（End Of Line）。
+上面这一行报错信息是 `SyntaxError: EOL while scanning string literal`。这是因为 `\'` 表示的是单引号字符 `'`（Literal） —— 是可被输出到屏幕的 `'`，而不是用来标示字符串的那个 `'` —— 别急，无论哪个初学者第一次读到前面的句子都觉得有点莫名其妙…… —— 于是，Python 编译器扫描这个 “字符串” 的时候，还没找到标示字符串末尾的另外一个 `'` 的时候就读到了 `EOL`（End Of Line）。
 
 如果你想输出这么个字符串，`He said, it's fine.`，如果用双引号扩起来 `"` 倒没啥问题，但是如果用单引号扩起来就麻烦了，因为编译器会把 `it` 后面的那个单引号 `'` 当作字符串结尾。
 ```python
@@ -304,10 +304,10 @@ for i in s:
 > * `s[index]` —— 返回索引值为 `index` 的那个字符
 > * `s[start:]` —— 返回从索引值为 `start` 开始一直到字符串末尾的所有字符
 > * `s[start:stop]` —— 返回从索引值为 `start` 开始一直到索引值为 `stop` 的那个字符_之前_的所有字符
-> * `s[:stop]` —— 返回从字符串开头一直到索引值为 `stop`的那个字符_之前_的所有字符
+> * `s[:stop]` —— 返回从字符串开头一直到索引值为 `stop` 的那个字符_之前_的所有字符
 > * `s[start:stop:step]` —— 返回从索引值为 `start` 开始一直到索引值为 `stop` 的那个字符_之前_的，以 `step` 为步长提取的所有字符
 
-提醒：无论是 `range(1,2)`，或者 `random.randrange(100, 1000)`又或者 `s[start:stop]` 都有一个相似的规律，包含左侧的 `1`, `100`, `start`，不包含右侧的`2`, `1000`, `stop`。
+提醒：无论是 `range(1,2)`，或者 `random.randrange(100, 1000)` 又或者 `s[start:stop]` 都有一个相似的规律，包含左侧的 `1`, `100`, `start`，不包含右侧的 `2`, `1000`, `stop`。
 
 ```python
 from IPython.core.interactiveshell import InteractiveShell
@@ -445,7 +445,7 @@ s.title().swapcase()
 另外，还有个 `str.encode()` 在处理非英文字符串（比如中文）的时候，经常会用到：
 ```python
 # str.encode(encoding="utf-8", errors="strict")
-# 关于更多可能得 encoding list, 请参阅：
+# 关于更多可能的 encoding list, 请参阅：
 # https://docs.python.org/3/library/codecs.html#standard-encodings
 s = '简单优于复杂。'
 s.encode()
@@ -542,7 +542,7 @@ print()
     Example of str.index():
     2
     56
-    
+
 
 
 `str.startswith()` 和 `str.endswith()` 是用来判断一个_字符串_是否以某个_子字符串_起始或者结束的：
@@ -980,7 +980,7 @@ print("'for'.isidentifier():", \
 
 这一章节显得相当繁杂。然而，这一章和下一章（关于容器），都是 “用来锻炼自己耐心的好材料”……
 
-不过，若是自己动手整理成一个表格，总结归纳一下这一章节的内容，你就会发现其实没多繁杂，总之就还是那点事儿，怎么处理字符串？用操作符、用内建函数，用 Methods。只不过，字符串的操作符和数值的操作符不一样 —— 类型不一样，操作符就当然不一样了么！—— 最不一样的地方是，字符串是有序容器的一种，所以，它有索引，所以可以根据索引提取…… 至于剩下的么，就是很常规的了，用函数处理，用 Methods 处理，只不过，Methods 相对多了一点而已。
+不过，若是自己动手整理成一个表格，总结归纳一下这一章节的内容，你就会发现其实没多繁杂，总之就还是那点事，怎么处理字符串？用操作符、用内建函数，用 Methods。只不过，字符串的操作符和数值的操作符不一样 —— 类型不一样，操作符就当然不一样了么！—— 最不一样的地方是，字符串是有序容器的一种，所以，它有索引，所以可以根据索引提取…… 至于剩下的么，就是很常规的了，用函数处理，用 Methods 处理，只不过，Methods 相对多了一点而已。
 
 整理成表格之后，就会发现想要全部记住其实并没多难……
 
